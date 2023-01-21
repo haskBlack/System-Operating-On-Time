@@ -4,7 +4,8 @@
 
     <h2 class="userh1">BIENVENIDO <span class="userspan" id="user">VICTOR DANIEL LUNA JUAREZ</span></h1>
 
-
 <?php
+    require 'home.php';
+    require 'box.php';
     require 'footer.php';
 ?>
