@@ -9,7 +9,10 @@
 </head>
 <body>
 
-    <header>
-        <div class="title"><span class="txt-title">System Operating</span><img src="../img/wm.png"><span class="txt-title2">On - Time</span></div>
-        <a href="#"><div class="btn-logout"><span class="snlogout">Log out</span></div></a>
-    </header>
+    <div class="fixed">
+        <header>
+            <div class="title"><span class="txt-title">System Operating</span><img src="../img/wm.png"><span class="txt-title2">On - Time</span></div>
+            <a href="#"><div class="btn-logout"><span class="snlogout">Log out</span></div></a>
+        </header>
+            <h2 class="userh1">BIENVENIDO <span class="userspan" id="user">VICTOR DANIEL LUNA JUAREZ</span></h1>
+    </div>
