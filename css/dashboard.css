@@ -13,13 +13,14 @@ header{
 }
 
 footer{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 40px;
     background-color: #444;
     bottom: 0px;
     color: #fff;
     text-align: center;
+    z-index: 10;
 }
 
 .txt-footer{
@@ -95,6 +96,7 @@ bottom: 20px;
 }
 
 .menu{
+    position: fixed;
     width: 240px;
     height: 680px;
     padding: .1px 0px;
@@ -106,6 +108,7 @@ bottom: 20px;
     -o-border-radius: 0px 5px 5px 0px;
     color: #fff;
     text-align: left;
+    z-index: 10;
 }
 
 .bar-menu{
@@ -125,21 +128,22 @@ bottom: 20px;
 
 .box{
     position: absolute;
-    margin: 0% 5%;
+    margin: 0% 280px;
     width: 75%;
-    height: 75%;
+    height: auto;
+    padding: 30px 0px;
     background-color: #f2f8fd;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    text-align: center;
 }
 
 .msj-h2{
     position:  relative;
     margin: 50px 0px;
+    padding: 0px 30px;
 }
 
 .cajon{
@@ -155,4 +159,142 @@ bottom: 20px;
 a{
     color: #fff;
     text-decoration: dashed;
+}
+
+.mod-tool{
+    width: 90%;
+    height: 100px;
+    margin: 0px 5%;
+}
+
+.msj-txt{
+    margin: 20px 0px;
+    padding: 0px 0px;
+}
+
+.txt-generate{
+    position: relative;
+    top: 10px;
+}
+
+.btn-generate{
+    position: relative;
+    background-color: steelblue;
+    float: right;
+    margin: 0px 5px;
+    
+}
+
+.btn-generate, .btn-view, .btn-edit{
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    color: #fff;
+}
+
+
+.btn-view{
+    position: relative;
+    margin: 10px 0px;
+    background-color: #76c143;
+    float: right;
+}
+
+.btn-generate:hover, .btn-view:hover, .data-row:hover{
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px 0px #000;
+}
+
+.btn-generate:hover{
+    background-color: navy;
+}
+
+.btn-view:hover{
+    background-color: seagreen;
+}
+
+.seleccions{
+    width: 250px;
+    height: 40px;
+    margin: 3px 0px;
+    border: none;
+    background-color: #0072CE;
+    color: #fff;
+}
+
+option{
+    background-color: #fff;
+    color: #000;
+}
+
+table{
+    margin: 0px -100px;
+    padding: 120px 80px;
+    text-align: center;
+}
+
+.table-data-header{
+    background-color: #0072CE;
+    color: #fff;
+}
+
+th,tr,td{
+    width: 300px;
+    border: none;
+}
+
+.data-row:nth-child(even){
+    background-color: #d6eeee;
+}
+
+.txt-text{
+    position: relative;
+    width: 200px;
+    height: 30px;
+    margin: 5px 10px;
+    border: #0072CE 1px solid;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    text-align: center;
+}
+
+.data-row:hover{
+    background-color: yellowgreen;
+}
+
+.data-row:active{
+    background-color: yellow;
+}
+
+.btn-edit{
+    position: absolute;
+    bottom: -60px;
+    width: 150px;
+    height: 40px;
+    background-color: yellowgreen;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
