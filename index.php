@@ -11,10 +11,10 @@
         <header>
             <div class="title"><span class="txt-title">System Operating</span><img src="img/wm.png"><span class="txt-title2">On - Time</span></div>
 
-            <form action="#">
+            <form action="assets/query/session_start.php" method="post">
 
-                <input class="txt-content" id="user" type="text" placeholder="User ID" required>
-                <input class="txt-content" id="pswr" type="password" placeholder="Password" required>
+                <input class="txt-content" id="username" type="text" placeholder="User ID" required>
+                <input class="txt-content" id="passwor" type="text" placeholder="Password" required>
                 <input class="btn" type="submit" value="Sign In">
             </form>
 

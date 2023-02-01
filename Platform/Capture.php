@@ -1,4 +1,5 @@
 <?php
+    require '../assets/query/conexion.php';
     require 'Header.php';
     require 'home.php';
 ?>
@@ -13,6 +14,7 @@
             <table>
                 <div>
                 <tr class="table-data-header">
+                    <th>seleccion</th>
                     <th>No. Embarque</th>
                     <th>Determinante</th>
                     <th>Tienda Club</th>
@@ -30,78 +32,45 @@
                     <th>Marchamo</th>
                     <th>File Contenido</th>
                 </tr>
-                <tr class="data-row">
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                </tr>
-                <tr class="data-row">
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                </tr>
-                <tr class="data-row">
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                </tr>
-                <tr class="data-row">
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                    <td>Hello Word</td>
-                </tr>
+                
+                <?php
+                $sql = "select * from db_table_capture";
+                $result = $conexion->query($sql);
+
+                if(!$result)die("Fatal Error");
+
+                $rows= $result->num_rows;
+
+                for($j=0;$j<$rows;$j++){
+
+                    $row=$result->fetch_array(MYSQLI_ASSOC);?>
+
+                    <tr class="data-row">
+                        <td><input type="checkbox" value="<?php echo htmlspecialchars($row['id_capture']); ?>"/></td>
+                        <td><?php echo htmlspecialchars($row['Number Embarque']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Determinante']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Tienda Club']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Destine']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Door']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Transport Line']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Economic Number']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Placas']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Tarimas Cheps']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Tarimas Blancas']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Tarimas Desarmadas']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Total Tarimas']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Tarima Alto Valor']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Tipo HV']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Terminacion HV']); ?></td>
+                        <td><?php echo htmlspecialchars($row['File Content']); ?></td>
+                    </tr>
+
+
+               <?php }
+                
+                ?>
+
+
             </table>
             <div class="btn-edit"><span class="txt-generate">Editar</span></div>
 
