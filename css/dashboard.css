@@ -113,6 +113,7 @@ bottom: 20px;
 }
 
 .bar-menu{
+    color: #fff;
     margin: 10px 0px;
     padding: 20px 30px;
 }
@@ -154,11 +155,11 @@ bottom: 20px;
 .box-flex{
     position: absolute;
     width: 100%;
+    height: 400px;
     top: 130px;
 }
 
-a{
-    color: #fff;
+a {
     text-decoration: dashed;
 }
 
@@ -214,7 +215,7 @@ a{
     float: right;
 }
 
-.btn-generate:hover, .btn-view:hover, .btn-edit:hover ,.data-row:hover{
+.btn-generate:hover, .btn-view:hover, .btn-edit:hover{
     transition: .5s;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -280,13 +281,13 @@ th,tr,td{
     text-align: center;
 }
 
-.data-row:hover{
+/*.data-row:hover{
     background-color: yellowgreen;
 }
 
 .data-row:active{
     background-color: yellow;
-}
+}*/
 
 .btn-edit{
     position: absolute;
@@ -301,4 +302,14 @@ th,tr,td{
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
+}
+
+.txt-form{
+    position: relative;
+    left: 50px;
+    margin: 10px 10px;
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
 }

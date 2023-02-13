@@ -12,6 +12,7 @@
                 <table>
                 <div>
                     <tr class="table-data-header">
+                        <th>Seleccion</th>
                         <th>Etiqueta</th>
                         <th>Determinante</th>
                         <th>Terminacion</th>
@@ -23,6 +24,7 @@
                         <th>Operador E.</th>
                     </tr>
                     <tr class="data-row">
+                        <td><input type="checkbox"></td>
                         <td>622401600511234567</td>
                         <td>6224</td>
                         <td>4567</td>
@@ -34,6 +36,7 @@
                         <td>David Garcia</td>
                     </tr>
                     <tr class="data-row">
+                        <td><input type="checkbox"></td>
                         <td>622401600511234567</td>
                         <td>6224</td>
                         <td>4567</td>
@@ -45,6 +48,7 @@
                         <td>David Garcia</td>
                     </tr>
                     <tr class="data-row">
+                        <td><input type="checkbox"></td>
                         <td>622401600511234567</td>
                         <td>6224</td>
                         <td>4567</td>

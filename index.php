@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suply Chain W -System Operating On - Time</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/Supply Chain.png">
 </head>
 <body>
         <header>

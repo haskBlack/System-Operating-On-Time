@@ -8,8 +8,6 @@
     <h2 class="msj-h2">CONTROL EMBARQUES EN PROCESO</h2>
         <div class="mod-tool">
             <p class="msj-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, accusamus ipsum minima rerum perspiciatis cumque sapiente ducimus praesentium optio impedit quibusdam ut rem vitae, perferendis numquam delectus quo unde. Distinctio.</p>
-            <div class="btn-generate" onclick="generar(1)"><span class="txt-generate">Buscar</span></div>
-            <input type="text" class="txt-text" placeholder="No. Embarque"/>
         
             <table>
                 <div>
@@ -18,9 +16,10 @@
                     <th>No. Embarque</th>
                     <th>Determinante</th>
                     <th>Tienda Club</th>
-                    <th>Cortina</th>
-                    <th>Linea Transportista</th>
+                    <th>Destine</th>
+                    <th>Door</th>
                     <th>No. Economico</th>
+                    <th>Transport Line</th>
                     <th>Placas Unidad</th>
                     <th>Tarimas Cheps</th>
                     <th>Tarimas Blancas</th>
@@ -31,7 +30,10 @@
                     <th>Total Tarimas</th>
                     <th>Marchamo</th>
                     <th>File Contenido</th>
+                    <th>Turno</th>
+                    <th>Status</th>
                 </tr>
+                <form action="edit-capture.php" method="GET">
                 
                 <?php
                 $sql = "select * from db_table_capture";
@@ -44,16 +46,16 @@
                 for($j=0;$j<$rows;$j++){
 
                     $row=$result->fetch_array(MYSQLI_ASSOC);?>
-
+                
                     <tr class="data-row">
-                        <td><input type="checkbox" value="<?php echo htmlspecialchars($row['id_capture']); ?>"/></td>
+                        <td><input type="radio" name="id_capture" value="<?php echo htmlspecialchars($row['id_capture']); ?>"/></td>
                         <td><?php echo htmlspecialchars($row['Number Embarque']); ?></td>
                         <td><?php echo htmlspecialchars($row['Determinante']); ?></td>
                         <td><?php echo htmlspecialchars($row['Tienda Club']); ?></td>
                         <td><?php echo htmlspecialchars($row['Destine']); ?></td>
                         <td><?php echo htmlspecialchars($row['Door']); ?></td>
-                        <td><?php echo htmlspecialchars($row['Transport Line']); ?></td>
                         <td><?php echo htmlspecialchars($row['Economic Number']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Transport Line']); ?></td>
                         <td><?php echo htmlspecialchars($row['Placas']); ?></td>
                         <td><?php echo htmlspecialchars($row['Tarimas Cheps']); ?></td>
                         <td><?php echo htmlspecialchars($row['Tarimas Blancas']); ?></td>
@@ -62,17 +64,18 @@
                         <td><?php echo htmlspecialchars($row['Tarima Alto Valor']); ?></td>
                         <td><?php echo htmlspecialchars($row['Tipo HV']); ?></td>
                         <td><?php echo htmlspecialchars($row['Terminacion HV']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Marchamo']) ?></td>
                         <td><?php echo htmlspecialchars($row['File Content']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Turno']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Status']); ?></td>
                     </tr>
-
 
                <?php }
                 
                 ?>
-
-
+                <input type="submit" value="Editar" class="btn-generate">
+</form>
             </table>
-            <div class="btn-edit"><span class="txt-generate">Editar</span></div>
 
         </div>
 </div>

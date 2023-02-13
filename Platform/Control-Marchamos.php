@@ -1,6 +1,8 @@
 <?php
+    require '../assets/query/conexion.php';
     require 'header.php';
     require 'home.php';
+    error_reporting();
 ?>
 
 <div class="box cajon">
@@ -17,78 +19,49 @@
                 <option value="">440400 - 440499</option>
                 <option value="">440500 - 440599</option>
             </select>
-
-            <div class="btn-generate"><span class="txt-generate">Consultar</span></div>
+            <form action="../assets/query/query-gen-marchamos.php" method="Post">
+            <input type="text" name="inicio" class="txt-form" placeholder="inicio">
+            <input type="submit" value="suma" class="btn-generate">
+            </form>
 
             <table>
                 <div>
                 <tr class="table-data-header">
+                    <th>Seleccions</th>
                     <th>Marchamo</th>
                     <th>Determinante</th>
-                    <th>Destino</th>
-                    <th>Cortina</th>
-                    <th>Linea</th>
+                    <th>Destine</th>
+                    <th>Door</th>
+                    <th>Transport Line</th>
                     <th>Placas</th>
                     <th>No. Economico</th>
                     <th>Shipping Line</th>
-                    <th>Fecha y Hora</th>
-                </tr>
-                <tr class="data-row">
-                    <td>000001</td>
-                    <td>6224</td>
-                    <td>SM Universidad</td>
-                    <td>52</td>
-                    <td>Tracusa</td>
-                    <td>456ty5</td>
-                    <td>55130788</td>
-                    <td>Victor Luna</td>
-                    <td>23/01/2023 09:33:00</td>
-                </tr>
-                <tr class="data-row">
-                    <td>000002</td>
-                    <td>6224</td>
-                    <td>SM Universidad</td>
-                    <td>52</td>
-                    <td>Tracusa</td>
-                    <td>456ty5</td>
-                    <td>55130788</td>
-                    <td>Victor Luna</td>
-                    <td>23/01/2023 09:33:00</td>
-                </tr>
-                <tr class="data-row">
-                    <td>000003</td>
-                    <td>6224</td>
-                    <td>SM Universidad</td>
-                    <td>52</td>
-                    <td>Tracusa</td>
-                    <td>456ty5</td>
-                    <td>55130788</td>
-                    <td>Victor Luna</td>
-                    <td>23/01/2023 09:33:00</td>
-                </tr>
-                <tr class="data-row">
-                    <td>000004</td>
-                    <td>6224</td>
-                    <td>SM Universidad</td>
-                    <td>52</td>
-                    <td>Tracusa</td>
-                    <td>456ty5</td>
-                    <td>55130788</td>
-                    <td>Victor Luna</td>
-                    <td>23/01/2023 09:33:00</td>
-                </tr>
-                <tr class="data-row">
-                    <td>000005</td>
-                    <td>6224</td>
-                    <td>SM Universidad</td>
-                    <td>52</td>
-                    <td>Tracusa</td>
-                    <td>456ty5</td>
-                    <td>55130788</td>
-                    <td>Victor Luna</td>
-                    <td>23/01/2023 09:33:00</td>
                 </tr>
 
+    <?php
+        $sql= "select * from db_table_marchamos";
+        $result = $conexion->query($sql);
+
+        if(!$conexion)die("Fatal Error");
+
+        $rows = $result->num_rows;
+
+        for($j=0;$j<$rows;$j++){
+            $row=$result->fetch_array(MYSQLI_ASSOC);?>
+
+            <tr class="data-row">
+                <td><input type="checkbox" value="<?php echo htmlspecialchars($row['id_marchamo']) ; ?>"></td>
+                <td><?php echo htmlspecialchars($row['Marchamo']) ;?></td>
+                <td><?php echo htmlspecialchars($row['Determinante'])  ?></td>
+                <td><?php echo htmlspecialchars($row['Destine'])  ?></td>
+                <td><?php echo htmlspecialchars($row['Door'])  ?></td>
+                <td><?php echo htmlspecialchars($row['Transport Line']);  ?></td>
+                <td><?php echo htmlspecialchars($row['Placas'])  ?></td>
+                <td><?php echo htmlspecialchars($row['Economic Number']);  ?></td>
+                <td><?php echo htmlspecialchars($row['Shipping Line'])  ?></td>
+            </tr>
+        <?php }
+?>
             </table>
         </div>
 </div>

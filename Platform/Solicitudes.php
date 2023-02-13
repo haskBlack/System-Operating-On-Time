@@ -75,17 +75,15 @@
 
             <!--Tabla de Solicitudes-->
                 <table>
-                    <div>
                     <tr class="table-data-header">
                         <th>Seleccion</th>
                         <th>Determinante</th>
                         <th>Tienda Club</th>
                         <th>Cortina</th>
                         <th>Destino</th>
-                        <th>Accions</th>
                     </tr>
             <!-- Implementar codigo php para tabla-->
-            
+            <form action="Formar-Unidad.php" method="GET">            
             <?php
                 $sql_table = "select * from db_table_solicitud";
                 $result_table = $conexion->query($sql_table);
@@ -97,25 +95,22 @@
                 for($j=0;$j<$rows_table;$j++){
                         $row_table=$result_table->fetch_array(MYSQLI_ASSOC);
                 ?>
-
                 <tr class="data-row">
-                    <td><input type="checkbox" value="<?php echo htmlspecialchars($row_table['id_solicitud']); ; ?>"></td>
+                    <td><input type="radio" name="id_solicitud" value="<?php echo htmlspecialchars($row_table['id_solicitud']); ; ?>"></td>
                     <td><?php echo htmlspecialchars($row_table['Determinante']);   ?></td>
                     <td><?php echo htmlspecialchars($row_table['Tienda Club']); ?></td>
                     <td><?php echo htmlspecialchars($row_table['Door']);  ?></td>
                     <td><?php echo htmlspecialchars($row_table['Destine']);  ?></td>
-                    <td><?php  ?></td>
                 </tr>
-
                 <?php
                     }
     $result->close();
     $result_table->close();
-    $conexion->close();
-                
+    $conexion->close();  
             ?>
+                    <input type="submit" value="Formar Unidad" class="btn-generate">
 
-
+            </form>
                 </table>
 
         </div>
